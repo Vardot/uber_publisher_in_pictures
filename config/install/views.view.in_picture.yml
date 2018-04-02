@@ -1,9 +1,10 @@
+uuid: 86cf4a0a-57bf-47e6-8fc5-7e098bca849a
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.hero_xlarge
-    - core.entity_view_mode.node.tout_medium
+    - core.entity_view_mode.node.vertical_media_teaser_small
     - core.entity_view_mode.node.vertical_media_teaser_xlarge
     - entityqueue.entity_queue.in_pictures_promoted_splash_area
     - field.storage.node.field_images
@@ -15,6 +16,8 @@ dependencies:
     - user
     - views_bootstrap
     - views_exclude_previous
+_core:
+  default_config_hash: xJtYoMROub_7iNof9Vo36pzFXNq91FtKu1Z_3mWXB7M
 id: in_picture
 label: 'In Picture'
 module: views
@@ -536,15 +539,15 @@ display:
         type: 'ds_entity:node'
         options:
           relationship: none
-          view_mode: tout_medium
+          view_mode: vertical_media_teaser_small
           alternating_fieldset:
             alternating: true
             allpages: true
-            item_0: tout_large
-            item_1: tout_medium
-            item_2: tout_medium
-            item_3: tout_medium
-            item_4: tout_medium
+            item_0: vertical_media_teaser_xlarge
+            item_1: vertical_media_teaser_small
+            item_2: vertical_media_teaser_small
+            item_3: vertical_media_teaser_small
+            item_4: vertical_media_teaser_small
           grouping_fieldset:
             group: false
             group_field: node_field_data|entityqueue_relationship
@@ -597,7 +600,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: 'This is the Promoted / Splash Area where you can promote your articles.<p class="hidden-anonymous"> To feature an article, <a class="btn hidden-anonymous" href=/admin/structure/entityqueue/in_pictures_promoted_splash_area/in_pictures_promoted_splash_area>Click here</a> to add it.</p>'
+            value: 'This is the Promoted / Splash Area where you can promote your articles.<p class="visible-admin hidden-anonymous"> To feature an article, <a class="btn" href=/admin/structure/entityqueue/in_pictures_promoted_splash_area/in_pictures_promoted_splash_area>Click here</a> to add it.</p>'
             format: full_html
           plugin_id: text
     cache_metadata:

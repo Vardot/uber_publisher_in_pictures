@@ -1,3 +1,4 @@
+uuid: 6e07b2b2-7374-4a65-a386-cf886037cf43
 langcode: en
 status: true
 dependencies:
@@ -35,11 +36,6 @@ third_party_settings:
         - node_post_date
         - field_images
     fields:
-      node_post_date:
-        plugin_id: node_post_date
-        weight: 2
-        label: hidden
-        formatter: ds_post_date_short
       node_title:
         plugin_id: node_title
         weight: 1
@@ -49,6 +45,11 @@ third_party_settings:
           link: true
           wrapper: h3
           class: ''
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 2
+        label: hidden
+        formatter: ds_post_date_short
   panelizer:
     enable: false
     custom: false
@@ -72,6 +73,9 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Teaser content'
+      region: hidden
+_core:
+  default_config_hash: _OsIHoZqf1KPEDl6QxoYI3lNpoAomfGNJOt3QkfWHUw
 id: node.in_pictures.vertical_media_teaser_xlarge
 targetEntityType: node
 bundle: in_pictures
