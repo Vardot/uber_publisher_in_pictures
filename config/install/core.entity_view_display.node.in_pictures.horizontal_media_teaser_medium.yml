@@ -83,7 +83,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: s4_standard
+      view_mode: s04_standard
       link: false
     third_party_settings: {  }
     region: left
@@ -93,7 +93,7 @@ content:
     region: right
     label: hidden
     settings:
-      view_mode: s4
+      view_mode: s04
       link: false
     third_party_settings:
       ds:

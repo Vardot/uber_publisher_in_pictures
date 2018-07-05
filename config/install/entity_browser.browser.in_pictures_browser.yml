@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - media_entity.bundle.image
-    - views.view.browser
+    - media.type.image
+    - views.view.media_browsers
   module:
     - dropzonejs_eb_widget
-    - media_entity
+    - media
     - views
 name: in_pictures_browser
 label: 'In Pictures Browser'
@@ -14,7 +14,7 @@ display: modal
 display_configuration:
   width: '750'
   height: '550'
-  link_text: 'Select images'
+  link_text: 'Select image(s)'
   auto_open: false
 selection_display: no_display
 selection_display_configuration: {  }
@@ -23,8 +23,8 @@ widget_selector_configuration: {  }
 widgets:
   c5fb0857-c353-41b5-a553-407d7b906e83:
     settings:
-      view: browser
-      view_display: images_browser
+      view: media_browsers
+      view_display: image_browser
       submit_text: 'Select image(s)'
       auto_select: false
     uuid: c5fb0857-c353-41b5-a553-407d7b906e83
@@ -34,11 +34,17 @@ widgets:
   5a10940f-c1dd-47bc-a4d4-76bc1a0a4c34:
     settings:
       form_mode: image_with_caption
-      media_entity_bundle: image
-      upload_location: 'public://[date:custom:Y]-[date:custom:m]'
+      media_type: image
+      upload_location: 'public://images/[date:custom:Y]-[date:custom:m]'
       dropzone_description: 'Drop image files here to upload them'
       max_filesize: 32M
       extensions: 'jpg jpeg gif png'
+      clientside_resize: false
+      resize_width: null
+      resize_height: null
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
       submit_text: 'Select image(s)'
     uuid: 5a10940f-c1dd-47bc-a4d4-76bc1a0a4c34
     weight: -10

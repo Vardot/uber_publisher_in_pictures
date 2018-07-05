@@ -85,7 +85,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: s8_standard
+      view_mode: s08_standard
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
@@ -96,7 +96,7 @@ content:
     region: main
     label: hidden
     settings:
-      view_mode: s5_standard
+      view_mode: s05_standard
       link: false
     third_party_settings:
       ds:
