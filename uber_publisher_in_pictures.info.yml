@@ -11,6 +11,7 @@ dependencies:
   - datetime
   - dropzonejs_eb_widget
   - ds
+  - ds_switch_view_mode
   - entity_browser
   - entityqueue
   - field
@@ -22,7 +23,6 @@ dependencies:
   - metatag
   - node
   - page_manager
-  - panelizer
   - panels
   - path
   - pathauto
