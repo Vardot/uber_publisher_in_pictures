@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.in_pictures.body
     - field.field.node.in_pictures.field_images
     - field.field.node.in_pictures.field_meta_tags
+    - field.field.node.in_pictures.field_yoast_seo
     - node.type.in_pictures
   module:
     - text
@@ -29,4 +30,6 @@ content:
 hidden:
   field_images: true
   field_meta_tags: true
+  field_yoast_seo: true
   langcode: true
+  search_api_excerpt: true

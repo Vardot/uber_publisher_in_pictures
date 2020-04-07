@@ -1,6 +1,8 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.in_pictures
 id: node_type_in_pictures
 action: display_page
 allow_override: 0
