@@ -16,8 +16,6 @@ dependencies:
     - user
     - views_bootstrap
     - views_exclude_previous
-_core:
-  default_config_hash: xJtYoMROub_7iNof9Vo36pzFXNq91FtKu1Z_3mWXB7M
 id: in_picture
 label: 'In Picture'
 module: views

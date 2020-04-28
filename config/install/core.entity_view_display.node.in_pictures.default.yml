@@ -12,7 +12,6 @@ dependencies:
     - metatag
     - text
     - user
-third_party_settings: {  }
 id: node.in_pictures.default
 targetEntityType: node
 bundle: in_pictures
