@@ -23,6 +23,7 @@ third_party_settings:
       children:
         - title
         - body
+        - field_images
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -34,20 +35,6 @@ third_party_settings:
         formatter: open
         required_fields: true
       label: 'Basic info'
-    group_media:
-      children:
-        - field_images
-      parent_name: ''
-      weight: 1
-      format_type: fieldset
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: Media
 id: node.in_pictures.default
 targetEntityType: node
 bundle: in_pictures
@@ -70,7 +57,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_images:
-    weight: 2
+    weight: 4
     settings:
       media_types: {  }
     third_party_settings: {  }
