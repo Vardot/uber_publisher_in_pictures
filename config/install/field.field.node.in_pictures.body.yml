@@ -6,7 +6,6 @@ dependencies:
     - node.type.in_pictures
   module:
     - allowed_formats
-    - linkchecker
     - text
 third_party_settings:
   allowed_formats:
@@ -15,9 +14,6 @@ third_party_settings:
     basic_html: '0'
     code_html: '0'
     plain_text: '0'
-  linkchecker:
-    scan: true
-    extractor: html_link_extractor
 id: node.in_pictures.body
 field_name: body
 entity_type: node
