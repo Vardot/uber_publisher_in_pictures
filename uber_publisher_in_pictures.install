@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the uber_publisher_in_pictures module.
+ * Install functions for the uber_publisher_in_pictures module.
  */
 
 /**
@@ -13,7 +13,14 @@ function uber_publisher_in_pictures_install() {
   $moduleHandler = \Drupal::service('module_handler');
 
   if ($moduleHandler->moduleExists('uber_publisher_social_post')) {
-    $config_factory->getEditable('core.entity_form_display.node.in_pictures.default')->set('content.field_post_to_twitter', ['type' => 'boolean_checkbox', 'weight' => '11', 'region' => 'content', 'settings' => ['display_label' => 'true'], 'third_party_settings' => []])->save();
+    $config_factory->getEditable('core.entity_form_display.node.in_pictures.default')->set('content.field_post_to_twitter',
+      [
+        'type' => 'boolean_checkbox',
+        'weight' => '11',
+        'region' => 'content',
+        'settings' => ['display_label' => 'true'],
+        'third_party_settings' => [],
+      ])->save();
   }
 
   $config = $config_factory->getEditable('workflows.workflow.varbase_editorial_workflow');

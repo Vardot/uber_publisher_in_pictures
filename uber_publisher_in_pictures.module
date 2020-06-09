@@ -2,14 +2,10 @@
 
 /**
  * @file
+ * Contains uber_publisher_in_pictures.module.
  */
 
 use Drupal\Core\Form\FormStateInterface;
-
-/**
- * @file
- * Contains uber_publisher_in_pictures.module..
- */
 
 /**
  * Implements hook_page_attachments().
@@ -19,7 +15,7 @@ function uber_publisher_in_pictures_page_attachments(array &$attachments) {
 }
 
 /**
- * * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter().
  */
 function uber_publisher_in_pictures_form_node_in_pictures_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['ds_switch_view_mode']['ds_switch']['#options'] = [];
@@ -29,10 +25,27 @@ function uber_publisher_in_pictures_form_node_in_pictures_form_alter(&$form, For
 }
 
 /**
- * * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter().
  */
 function uber_publisher_in_pictures_form_node_in_pictures_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['ds_switch_view_mode']['ds_switch']['#options'] = [];
   $form['ds_switch_view_mode']['ds_switch']['#options']['full'] = t('Big picture');
   $form['ds_switch_view_mode']['ds_switch']['#options']['grid_gallery'] = t('Grid gallery');
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function uber_publisher_in_pictures_views_pre_view($view, $display_id, &$args) {
+  if ($view->id() == 'in_picture' && ($display_id == 'in_pictures_slider_style' || $display_id == 'in_pictures_big_picture_style'
+      || $display_id == "in_pictures_grid")) {
+
+    $route = \Drupal::routeMatch();
+
+    if ($route->getRouteName() == 'entity.node.preview') {
+      $uuid = $route->getParameter('node_preview')->uuid->value;
+      $entity = \Drupal::service('entity.repository')->loadEntityByUuid('node', $uuid);
+      $args[0] = $entity->id();
+    }
+  }
 }
