@@ -25,6 +25,7 @@ third_party_settings:
           wrapper: div
           classes:
             row: row
+            col-sm-12: col-sm-12
           add_layout_class: 1
           attributes: ''
         regions:
@@ -44,11 +45,6 @@ third_party_settings:
         - search_api_excerpt
         - node_link
     fields:
-      node_link:
-        plugin_id: node_link
-        weight: 8
-        label: hidden
-        formatter: default
       node_title:
         plugin_id: node_title
         weight: 6
@@ -64,6 +60,11 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
+      node_link:
+        plugin_id: node_link
+        weight: 8
+        label: hidden
+        formatter: default
   field_group:
     group_authoring_information:
       children:
@@ -85,10 +86,10 @@ third_party_settings:
       region: main
     group_content_wrapper:
       children:
-        - node_post_date
         - node_title
         - search_api_excerpt
         - node_link
+        - node_post_date
       parent_name: ''
       weight: 1
       format_type: html_element
