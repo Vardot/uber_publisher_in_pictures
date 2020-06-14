@@ -8,6 +8,21 @@
 use Drupal\Core\Form\FormStateInterface;
 
 /**
+ * Implements hook_theme().
+ */
+function uber_publisher_in_pictures_theme() {
+  return [
+    'in_pictures_tabs' => [
+      'variables' => [
+        'list' => t('List'),
+        'slider' => t('Slider'),
+      ],
+      'template' => 'in-pictures-tabs',
+    ],
+  ];
+}
+
+/**
  * Implements hook_page_attachments().
  */
 function uber_publisher_in_pictures_page_attachments(array &$attachments) {

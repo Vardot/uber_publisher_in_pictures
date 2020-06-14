@@ -8,56 +8,140 @@ dependencies:
     - field.field.node.in_pictures.field_meta_tags
     - field.field.node.in_pictures.field_yoast_seo
     - node.type.in_pictures
+    - views.view.in_picture
   module:
-    - ds
+    - layout_builder
+    - layout_discovery
+    - layout_library
     - text
+    - uber_publisher_in_pictures
     - user
+    - views
 third_party_settings:
-  ds:
-    layout:
-      id: bs_1col
-      library: null
-      disable_css: false
-      entity_classes: all_classes
-      settings:
-        label: ''
-        layout:
-          wrapper: div
-          classes:
-            row: row
-          add_layout_class: 1
-          attributes: ''
-        regions:
-          main:
-            wrapper: div
-            classes:
-              col-sm-12: col-sm-12
-            add_region_classes: 1
-            attributes: ''
-    regions:
-      main:
-        - content_moderation_control
-        - links
-        - body
-        - 'dynamic_token_field:node-in_pictures_tabs'
-        - 'dynamic_block_field:node-in_pictures_big_picture_view'
-        - 'dynamic_block_field:node-in_pictures_slider_view'
-    fields:
-      'dynamic_token_field:node-in_pictures_tabs':
-        plugin_id: 'dynamic_token_field:node-in_pictures_tabs'
-        weight: 3
-        label: hidden
-        formatter: default
-      'dynamic_block_field:node-in_pictures_big_picture_view':
-        plugin_id: 'dynamic_block_field:node-in_pictures_big_picture_view'
-        weight: 4
-        label: hidden
-        formatter: default
-      'dynamic_block_field:node-in_pictures_slider_view':
-        plugin_id: 'dynamic_block_field:node-in_pictures_slider_view'
-        weight: 5
-        label: hidden
-        formatter: default
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          9ff8bae0-1874-4fdb-9147-cc675b26f671:
+            uuid: 9ff8bae0-1874-4fdb-9147-cc675b26f671
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:in_pictures:content_moderation_control'
+            additional: {  }
+            weight: 0
+          7a6ac5d7-2682-4940-817e-c3c61b02da76:
+            uuid: 7a6ac5d7-2682-4940-817e-c3c61b02da76
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:in_pictures:links'
+            additional: {  }
+            weight: 1
+          8c573d78-3982-4bb1-a20f-9540c1831c95:
+            uuid: 8c573d78-3982-4bb1-a20f-9540c1831c95
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:in_pictures:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          c5844f32-c0b5-44d2-b69a-bba5781b0dcf:
+            uuid: c5844f32-c0b5-44d2-b69a-bba5781b0dcf
+            region: content
+            configuration:
+              id: 'field_block:node:in_pictures:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings:
+                  ds:
+                    ft:
+                      id: default
+                      settings:
+                        lb: ''
+                        lb-col: false
+                        classes: {  }
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          fe9f8bd7-b61d-4477-83ad-ede9b15f8e7b:
+            uuid: fe9f8bd7-b61d-4477-83ad-ede9b15f8e7b
+            region: content
+            configuration:
+              id: in_pictures_tabs
+              label: 'In Pictures Tabs'
+              provider: uber_publisher_in_pictures
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          a2b9e4b7-bef6-490e-8e09-f46d3605d4ea:
+            uuid: a2b9e4b7-bef6-490e-8e09-f46d3605d4ea
+            region: content
+            configuration:
+              id: 'views_block:in_picture-in_pictures_big_picture_style'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+          53a97ff1-1466-49c7-b1e7-8457b650381b:
+            uuid: 53a97ff1-1466-49c7-b1e7-8457b650381b
+            region: content
+            configuration:
+              id: 'views_block:in_picture-in_pictures_slider_style'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+              context_mapping: {  }
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+  layout_library:
+    enable: false
 id: node.in_pictures.full
 targetEntityType: node
 bundle: in_pictures
