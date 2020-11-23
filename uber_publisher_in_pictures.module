@@ -37,6 +37,7 @@ function uber_publisher_in_pictures_form_node_in_pictures_form_alter(&$form, For
   $form['ds_switch_view_mode']['ds_switch']['#options']['full'] = t('Big picture');
   $form['ds_switch_view_mode']['ds_switch']['#options']['grid_gallery'] = t('Grid gallery');
   $form['ds_switch_view_mode']['ds_switch']['#default_value'] = 'full';
+  $form['actions']['preview']['#access'] = FALSE;
 }
 
 /**
