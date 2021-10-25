@@ -1,11 +1,11 @@
 name: 'Uber Publisher In Pictures'
 description: 'News stories told and displayed in a form of picture galleries.'
 type: module
-core_version_requirement: ^8 || ^9
 package: 'Uber Publisher'
+core_version_requirement: ^8 || ^9
 dependencies:
-  - varbase_core
-  - varbase_media
-  - varbase_seo
-  - uber_publisher_core
-  - uber_publisher_amp
+  - varbase_core:varbase_core
+  - varbase_media:varbase_media
+  - varbase_seo:varbase_seo
+  - uber_publisher_core:uber_publisher_core
+  - uber_publisher_core:uber_publisher_amp
